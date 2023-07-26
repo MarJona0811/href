@@ -1,0 +1,31 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >Not loaded</div>
+  <script type="text/javascript">
+   const box = document.getElementById('my_bouncing_box');
+
+   const screenwidth = window.innerWidth;
+   const screenHeught = window.innerHeight;
+   
+   let x = x + 1;
+   let y = y + 1;
+   let dirx = 1;
+   let diry = 1;
+
+   function moveBox(){
+
+    if(x + 100 >= screenWidth || x < 0){
+        dirx *= -1;
+    }
+    if(y + 100 >= screenHeight || y < 0){
+        diry *= -1;
+    }
+    x = x + dirx
+    y = y +diry
+    box.style.left = x
+    box.style.left = y
+
+   }
+   setInterval(moveBox, 100)
+
+  </script>
+</html>
